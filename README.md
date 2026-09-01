@@ -10,10 +10,25 @@ the right set of repos at the right tag:
 ```sh
 git clone https://github.com/rahulpnath/tilt-series
 cd tilt-series
-./bootstrap.sh v4-start
+./bootstrap.sh v4-end
 ```
 
-## At `v4-start`
+## At `v4-end`
+
+A `Tiltfile`, and nothing else. `compose.yaml` is untouched.
+
+```sh
+tilt up          # from this folder — Admin on its own
+```
+
+One resource, one clickable link, Vite still doing the reloading. The workspace
+`Tiltfile` one folder up `include()`s this file, and because
+`project_name='shop-admin'` is passed explicitly, Admin stays its own compose
+project either way.
+
+---
+
+## Earlier: `v4-start`
 
 A fourth repo, and deliberately the least interesting one in the series. It is a
 Vite + React app like `Shop.Storefront`, on port **5174**, in its own compose
