@@ -1,0 +1,100 @@
+.admin {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.admin header {
+  margin-bottom: 2rem;
+}
+
+.admin h1 {
+  margin: 0 0 0.35rem;
+  font-size: 2.75rem;
+  letter-spacing: -0.02em;
+}
+
+.admin header p {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #5c6370;
+}
+
+.add-product {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.add-product input {
+  flex: 1 1 10rem;
+  padding: 0.65rem 0.9rem;
+  font: inherit;
+  border: 1px solid #e3e6ea;
+  border-radius: 0.5rem;
+}
+
+.add-product button {
+  padding: 0.65rem 1.1rem;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: #1f6feb;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.add-product button:hover {
+  background: #1a5fd0;
+}
+
+.add-product .secondary {
+  color: #1f2933;
+  background: #f3f5f8;
+}
+
+.panels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid #e3e6ea;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+.panel h2 {
+  margin: 0 0 1rem;
+  font-size: 1.3rem;
+}
+
+.panel ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.panel li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.55rem 0;
+  border-top: 1px solid #f0f2f4;
+}
+
+.status {
+  margin-top: 1rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 0.5rem;
+  background: #e8f5e9;
+  color: #1b5e20;
+}
+
+.status-error {
+  background: #fdecec;
+  color: #b3261e;
+}

@@ -1,0 +1,14 @@
+name: shop-admin
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: admin-web.dev.Dockerfile
+    ports:
+      - "5174:5174"
+    environment:
+      VITE_CATALOG_URL: "http://localhost:5101"
+      VITE_ORDERS_URL: "http://localhost:5102"
+    volumes:
+      - ./src/src:/app/src
