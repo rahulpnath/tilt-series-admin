@@ -10,10 +10,27 @@ the right set of repos at the right tag:
 ```sh
 git clone https://github.com/rahulpnath/tilt-series
 cd tilt-series
-./bootstrap.sh v4-start
+./bootstrap.sh v4-end
 ```
 
-## At `v4-start`
+## At `v4-end`
+
+A `Tiltfile`, and nothing else. `compose.yaml` is untouched.
+
+```python
+docker_compose('compose.yaml', project_name='shop-admin')
+
+dc_resource('web', new_name='admin-web', labels=['admin'])
+```
+
+`tilt up` from this folder runs Admin on its own. From the workspace root, its `Tiltfile`
+`include()`s this one, and this repo stays its own compose project either way.
+
+`project_name` is not optional — Tilt does not read the `name:` key in `compose.yaml`.
+`new_name` is what Tilt calls each service: resource names are global across every repo the
+workspace loads, and `Shop.Storefront` has a `web` too. The service and container names are unchanged.
+
+## Earlier: `v4-start`
 
 A second React app, for the people running the shop. It adds products through Catalog's API
 and lists the products and the orders that have come in. Same shape as `Shop.Storefront`: a
