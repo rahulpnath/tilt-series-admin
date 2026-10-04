@@ -3,13 +3,13 @@ name: shop-admin
 services:
   admin-web:
     build:
-      context: ${ADMIN_DIR:-.}
+      context: .
       dockerfile: admin-web.dev.Dockerfile
     environment:
       VITE_CATALOG_URL: "https://catalog.localhost"
       VITE_ORDERS_URL: "https://orders.localhost"
     volumes:
-      - ${ADMIN_DIR:-.}/src/src:/app/src
+      - ./src/src:/app/src
     networks:
       default:
       shopnet:
