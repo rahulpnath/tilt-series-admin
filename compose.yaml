@@ -1,22 +1,22 @@
 name: shop-admin
 
 services:
-  web:
+  admin-web:
     build:
-      context: .
+      context: ${ADMIN_DIR:-.}
       dockerfile: admin-web.dev.Dockerfile
     environment:
       VITE_CATALOG_URL: "https://catalog.localhost"
       VITE_ORDERS_URL: "https://orders.localhost"
     volumes:
-      - ./src/src:/app/src
+      - ${ADMIN_DIR:-.}/src/src:/app/src
     networks:
       default:
       shopnet:
         aliases:
           - admin-web
 
-# Owned by the workspace's infra project; Caddy reaches this app through it.
+# Caddy's network; it reaches this app by its alias.
 networks:
   shopnet:
     external: true
